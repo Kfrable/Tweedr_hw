@@ -3,8 +3,8 @@ import React from 'react'
 function Input(props){
 	return(
 		<div>
-		<form onSubmit={props.onSubmit}>
-		<input></input>
+		<form id='test' onSubmit={props.onSubmit}>
+		<input id='newVal'></input>
 		</form>
 
 		</div>
