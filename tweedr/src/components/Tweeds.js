@@ -1,4 +1,5 @@
 import React from 'react';
+import animate from 'animate.css'
 
 function Tweed(props){
 
@@ -9,7 +10,7 @@ function Tweed(props){
         props.tweed.map((e,i) => {
           // this return is for map
           return (
-                <li id={e.id} key={e.id}> {e.tweed}<hr /></li>
+                <li className='animated slideInRight' id={e.id} key={e.id}> {e.tweed}<hr /></li>
                 
          )
         })

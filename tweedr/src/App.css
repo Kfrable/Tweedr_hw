@@ -61,9 +61,10 @@ hr {
   width: 60%;
 }
 
-li:hover {
-    background-color: lightgray;
-    color: black;
+li:hover  {
+/*    background-color: lightgray;*/
+/*    color: black;*/
+box-shadow: 0 4px 8px 0 rgba(100,10,0,.8);
 }
 
 li a {
@@ -79,6 +80,9 @@ li{
     font-size: 20px;
     width: 80%;
     margin: 29px;
+}
+.animated {
+  animation-duration: 2s;
 }
 
 #nav {
