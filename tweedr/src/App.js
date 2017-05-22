@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 
@@ -7,8 +6,7 @@ import {Route, BrowserRouter as Router} from 'react-router-dom'
 
 import Nav from './components/Nav';
 import Tweed from './components/Tweeds';
-import Write from './components/Input';
-import Submit from'./components/Submit';
+import Input from './components/Input';
 import Footer from './components/Fotter';
 
 
@@ -22,12 +20,13 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state={
-     tweed:""
+     tweed: ''
     }
   }
 
-
-
+  componentDidMount(){
+    this.getAllTweeds();
+  }
 
   getAllTweeds(data){
     console.log('get all comments')
@@ -47,16 +46,17 @@ class App extends Component {
   }
   }
 
-  handleOnClick(event){
+  handleSubmit(event){
+    event.preventDefault();
     let url = 'https://tweedr-db.herokuapp.com/tweeds/'
-    console.log('working')
     console.log(event.target.value)
-    let read = document.getElementById('read');
-    let list = document.createElement('li');
-    list.innerHTML = event.target.value
-    read.appendChild(list);
-    let button = document.getElementById('butt')
-    button.addEventListener('click',this.getAllTweeds)
+    // let read = document.getElementById('read');
+    // let list = document.createElement('li');
+    // list.innerHTML = event.target.value
+    // read.appendChild(list);
+    console.log('what does read show --->', read);
+    console.log('what does LIST show --->', list);
+    console.log('what does VALUE show --->', event.target.value);
     axios.post(url)
     .then((res) =>{ 
         tweed:this.event.target.value
@@ -72,9 +72,9 @@ class App extends Component {
           
           <Nav/>
           
-          <Write onClick={(event) => this.handleOnClick(event)}/>
+          <Input onSubmit={(event) => this.handleSubmit(event)}/>
           
-          <Tweed onPageLoad={(event) => this.getAllTweeds(event)}/>
+          <Tweed />
           <Footer/>
 
           <Route path="/facebook" exact component={Facebook}></Route>
