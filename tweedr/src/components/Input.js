@@ -1,14 +1,14 @@
 import React from 'react'
 
-function Write(props){
+function Input(props){
 	return(
 		<div>
-		<input onClick={props.onClick}></input>
-		<button onClick={props.onClick}>submit</button>
-		<button id='butt' onClick={props.onClick}>GetTweeds</button>
+		<form onSubmit={props.onSubmit}>
+		<input></input>
+		</form>
 
 		</div>
 	);
 }
 
-export default Write
+export default Input
