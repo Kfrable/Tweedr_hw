@@ -1,10 +1,12 @@
+body {
+    text-align: center;
+  background: black;
+    color: white;
+}
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  background: black;
+    color: white;
 }
 
 .App-header {
@@ -14,18 +16,15 @@
   color: white;
 }
 
-.App-intro {
-  font-size: large;
-}
-
 #read {
-    position: absolute;
-    left: 187px;
-    top: 112px;
-    font-size: 41px;
-    overflow: scroll;
-    height: 351px;
-    width: 344px;
+  position: absolute;
+  font-size: 20px;
+  overflow: scroll;
+  height: 57%;
+  list-style: none;
+  background: wheat;
+  color: black;
+  left: 33%;
 }
 
 ul{
@@ -40,25 +39,31 @@ img{
 
 #body {
     border: black solid 2px;
-    width: 554px;
-    height: 536px;
-    margin-left: 118px;
-    margin-top: -17px;
-    border-radius: 100%;
+    width: 34%;
+    min-height: 300px;
+    margin-left: 520px;
+    margin-top: 20px;
 }
 
 h1 {
-    color: black;
-    display: inline;
-    position: relative;
-     top: 18px;
-
-    font-size: 44px;
+  color: wheat;
+  display: inline;
+  position: relative;
+  font-size: 44px;
+}
+input {
+  font-size: 22px;
+  background: wheat;
+  width: 25%;
+}
+hr {
+  color: blue;
+  width: 60%;
 }
 
-li a:hover {
-    background-color: black;
-    color:white;
+li:hover {
+    background-color: lightgray;
+    color: black;
 }
 
 li a {
@@ -71,7 +76,9 @@ li a {
 }
 
 li{
-  font-size:20px;
+    font-size: 20px;
+    width: 80%;
+    margin: 29px;
 }
 
 #nav {
@@ -98,12 +105,6 @@ input{
   border:black solid 2px;
     position: relative;
     bottom: -90px;
-}
-
-body{
-  background-image: url('http://i.istockimg.com/file_thumbview_approve/21070814/3/stock-illustration-21070814-retro-style-man-pointing-at-you.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 @keyframes App-logo-spin {
