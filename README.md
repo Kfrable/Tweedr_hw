@@ -4,9 +4,9 @@ A web application that mocks the features of the popular Twitter application.
 
 
 ## Wireframes
-![Part1/2](Front Page.png)
+![Part1/2](assets/front-page.png)
 
-![Part2/2](Single Tweedr Route.png)
+![Part2/2](assets/single-tweed.png)
 
 ## User Stories
 
