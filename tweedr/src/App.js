@@ -33,6 +33,7 @@ class App extends Component {
     let url='https://tweedr-db.herokuapp.com/tweeds/'
 
     axios.get(url)
+
     .then((res) =>{
       console.log('find the tweed here', res.data.data);
       this.setState({
@@ -68,7 +69,6 @@ class App extends Component {
     // let list = document.createElement('li');
     // list.innerHTML = item
     // read.appendChild(list);
-
     axios.post(url, {
       tweed: item
     }) 
