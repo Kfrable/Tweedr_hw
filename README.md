@@ -3,18 +3,18 @@
 A web application that mocks the features of the popular Twitter application.
 
 
-##Wireframes
+## Wireframes
 ![Part1/2](wireframe)
 
 ![Part2/2](wireframe)
 
-##User Stories
+## User Stories
 
 - A user should be able to input a tweed and see that tweed updated live on the front-page of the web application.
 
 - A user should be able to click on an individual tweed and see solely that tweed. 
 
-##Technologies
+## Technologies
 
 - React
 - JavaScript
@@ -24,18 +24,18 @@ A web application that mocks the features of the popular Twitter application.
 - CSS
 - Heroku
 
-##Minimum Viable Product
+## Minimum Viable Product
 - A web application that pulls tweeds from a database.
 
 - A user should be able to input a tweed into the database using the web application.
 
 - Upon clicking an individual tweed, a user should be taken to a new route path that displays only that individual tweed.
 
-##Major Hurdles
+## Major Hurdles
 
 -Working with the Axios module represented a major hurdle for the team.
 
-##Author(s)
+## Author(s)
 Kyle Frable
 
 Dashiell Lumas
