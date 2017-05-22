@@ -5,7 +5,7 @@ import axios from 'axios';
 import {Route, BrowserRouter as Router} from 'react-router-dom'
 
 import Nav from './components/Nav';
-import Tweed from './components/Tweeds';
+import Tweeds from './components/Tweeds';
 import Input from './components/Input';
 import Footer from './components/Fotter';
 
@@ -19,8 +19,8 @@ let Facebook = () =>{return <div> <a href='https://facebook.com'>
 class App extends Component {
   constructor(props){
     super(props)
-    this.state={
-     tweed: ''
+    this.state = {
+     tweed: [],
     }
   }
 
@@ -28,41 +28,52 @@ class App extends Component {
     this.getAllTweeds();
   }
 
-  getAllTweeds(data){
-    console.log('get all comments')
+  getAllTweeds(){
+
     let url='https://tweedr-db.herokuapp.com/tweeds/'
 
-   for(let i = 0; i <3; i++){
-    axios.get('https://tweedr-db.herokuapp.com/tweeds/?tweed' + [i])
+    axios.get(url)
     .then((res) =>{
-       console.log(res.data.data.tweed)
-    let read = document.getElementById('read');
-    let list = document.createElement('li');
-    list.innerHTML = res.data.data[i].tweed
-    list.setAttribute('id',[i])
-    read.appendChild(list);
+      console.log('find the tweed here', res.data.data);
+      this.setState({
+        tweed: res.data.data
+      })
+
+       // let show = res.data.data
+
+       // let arr = show.map((d) =>
+       //    <li>
+       //      {d.tweed}
+       //    </li>)
+
+
+    // let read = document.getElementById('read');
+    // let list = document.createElement('li');
+    // list.innerHTML = res.data.data[i].tweed
+    // list.setAttribute('id',[i])
+    // read.appendChild(list);
 
     })
-  }
-  }
+}
+  
 
   handleSubmit(event){
     event.preventDefault();
-    let url = 'https://tweedr-db.herokuapp.com/tweeds/'
-    console.log(event.target.value)
+    let url = 'https://tweedr-db.herokuapp.com/tweeds/';
+    console.log('submt working');
+    let item = document.getElementById('newVal').value;
+    console.log(item);
+    // console.log('this is input val', item);
     // let read = document.getElementById('read');
     // let list = document.createElement('li');
-    // list.innerHTML = event.target.value
+    // list.innerHTML = item
     // read.appendChild(list);
-    console.log('what does read show --->', read);
-    console.log('what does LIST show --->', list);
-    console.log('what does VALUE show --->', event.target.value);
-    axios.post(url)
-    .then((res) =>{ 
-        event.target.value
-    })
-    
+
+    axios.post(url, {
+      tweed: item
+    }) 
   }
+
 
 
   render() {
@@ -74,7 +85,7 @@ class App extends Component {
           
           <Input onSubmit={(event) => this.handleSubmit(event)}/>
           
-          <Tweed />
+          <Tweeds tweed={this.state.tweed} />
           <Footer/>
 
           <Route path="/facebook" exact component={Facebook}></Route>
