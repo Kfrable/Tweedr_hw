@@ -32,8 +32,8 @@ class App extends Component {
     console.log('get all comments')
     let url='https://tweedr-db.herokuapp.com/tweeds/'
 
-   for(let i = 0; i <3; i++){
-    axios.get('https://tweedr-db.herokuapp.com/tweeds/?tweed' + [i])
+   for(let i = 0; i <5 ; i++){
+    axios.get('https://tweedr-db.herokuapp.com/tweeds/' + [i])
     .then((res) =>{
        console.log(res.data.data.tweed)
     let read = document.getElementById('read');
@@ -59,7 +59,7 @@ class App extends Component {
     console.log('what does VALUE show --->', event.target.value);
     axios.post(url)
     .then((res) =>{ 
-        event.target.value
+        tweed:this.event.target.value
     })
     
   }
